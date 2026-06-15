@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio Thrive — Advanced Longevity Medicine · Oak Brook, IL</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#07090E;--bg2:#0C0F18;--bg3:#111520;
+--gold:#C9A84C;--gold2:#E8C97A;--gdim:rgba(201,168,76,0.15);
+--w:#F4EFE6;--w2:rgba(244,239,230,0.7);--w3:rgba(244,239,230,0.35);
+--m:#7A7670;--brd:rgba(201,168,76,0.18);--brd2:rgba(255,255,255,0.07);
+--h:'Cormorant Garamond',Georgia,serif;--b:'Outfit',sans-serif;--r:4px;
+}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:var(--b);background:var(--bg);color:var(--w);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(7,9,14,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--brd2)}
+.nw{max-width:1200px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:var(--h);font-size:20px;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-decoration:none;white-space:nowrap}
+.logo span{color:var(--w);font-weight:300}
+.nm{display:none;gap:20px;list-style:none}
+@media(min-width:900px){.nm{display:flex}}
+.nm a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--w3);text-decoration:none;transition:color .2s}
+.nm a:hover{color:var(--gold)}
+.nb{background:var(--gold);color:#07090E;font-family:var(--b);font-size:12px;font-weight:600;padding:9px 18px;border-radius:100px;text-decoration:none;letter-spacing:0.05em;transition:all .2s;white-space:nowrap;flex-shrink:0;border:none;cursor:pointer}
+.nb:hover{background:var(--gold2)}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:100px 20px 80px;position:relative;overflow:hidden}
+.hglow{position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(201,168,76,0.07),transparent 70%);pointer-events:none}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hi{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hpill{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.07);border:1px solid var(--brd);border-radius:100px;padding:7px 14px;margin-bottom:28px}
+.pdot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hpill span{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-family:var(--h);font-size:clamp(52px,11vw,96px);line-height:.9;letter-spacing:-0.02em;color:var(--w);font-weight:400}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hsub{font-size:clamp(15px,2.5vw,18px);line-height:1.65;color:var(--w2);max-width:520px;margin:24px 0 16px}
+.hproof{display:flex;align-items:center;gap:10px;margin-bottom:36px;flex-wrap:wrap}
+.hstars{color:var(--gold);font-size:14px;letter-spacing:2px}
+.hpt{font-size:13px;color:var(--m)}
+.hdiv{width:1px;height:14px;background:var(--brd2)}
+.hbadge{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:var(--gdim);padding:4px 10px;border-radius:100px}
+.hbtns{display:flex;flex-direction:column;gap:12px}
+@media(min-width:480px){.hbtns{flex-direction:row}}
+.bg{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:#07090E;font-family:var(--b);font-size:14px;font-weight:600;padding:15px 28px;border-radius:100px;text-decoration:none;letter-spacing:0.04em;transition:all .25s;border:none;cursor:pointer;white-space:nowrap}
+.bg:hover{background:var(--gold2);transform:translateY(-2px)}
+.bgh{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:var(--w);font-family:var(--b);font-size:14px;padding:15px 28px;border-radius:100px;text-decoration:none;border:1px solid rgba(244,239,230,0.2);transition:all .25s;white-space:nowrap}
+.bgh:hover{border-color:var(--gold);color:var(--gold)}
+.scrl{display:flex;align-items:center;gap:10px;margin-top:48px}
+.scrl-line{width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.scrl-text{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--m)}
+
+/* TRUST */
+.tstrip{background:linear-gradient(90deg,transparent,rgba(201,168,76,0.05),transparent);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);padding:20px}
+.ti{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 36px}
+.titem{display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--m)}
+.tck{color:var(--gold)}
+
+/* STATS */
+.stats{padding:64px 20px;background:var(--bg2)}
+.sgrid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+@media(min-width:640px){.sgrid{grid-template-columns:repeat(4,1fr)}}
+.sc{padding:32px 24px;text-align:center;background:var(--bg3);border:1px solid var(--brd2)}
+.sn{font-family:var(--h);font-size:clamp(40px,6vw,56px);font-weight:500;color:var(--gold);line-height:1;margin-bottom:8px}
+.sl{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--m);line-height:1.5}
+
+/* FOUNDING */
+.fband{background:linear-gradient(135deg,rgba(201,168,76,0.05),transparent);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);padding:56px 20px}
+.fbi{max-width:800px;margin:0 auto;text-align:center}
+.fbi blockquote{font-family:var(--h);font-size:clamp(20px,4vw,30px);font-style:italic;color:var(--w);line-height:1.45;margin-bottom:20px;font-weight:400}
+.fbi blockquote em{color:var(--gold)}
+.fbi p{font-size:11px;color:var(--m);letter-spacing:0.12em;text-transform:uppercase}
+
+/* SECTIONS */
+.sec{padding:80px 20px}
+@media(min-width:768px){.sec{padding:100px 40px}}
+.seca{background:var(--bg2)}
+.con{max-width:1200px;margin:0 auto}
+.ey{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+h2.d{font-family:var(--h);font-size:clamp(36px,6vw,62px);line-height:.95;letter-spacing:-0.01em;color:var(--w);font-weight:400;margin-bottom:16px}
+h2.d em{font-style:italic;color:var(--gold)}
+.gr{width:36px;height:1px;background:var(--gold);margin:20px 0}
+.bl{font-size:clamp(15px,2vw,17px);line-height:1.7;color:var(--w2);max-width:560px}
+
+/* AUDIENCE */
+.agrid{display:grid;grid-template-columns:1fr;gap:2px;margin-top:48px}
+@media(min-width:640px){.agrid{grid-template-columns:1fr 1fr}}
+.ac{padding:40px 32px;background:var(--bg3);border:1px solid var(--brd2);transition:border-color .3s;position:relative;overflow:hidden}
+.ac::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s}
+.ac:hover{border-color:var(--brd)}
+.ac:hover::before{opacity:1}
+.atag{display:flex;align-items:center;gap:8px;margin-bottom:20px}
+.aicon{font-size:20px}
+.albl{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold)}
+.ac h3{font-family:var(--h);font-size:clamp(24px,4vw,32px);color:var(--w);margin-bottom:14px;font-weight:400;line-height:1.1}
+.ac p{font-size:14px;line-height:1.75;color:var(--w2);margin-bottom:22px}
+.alist{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.alist li{font-size:13px;color:var(--w2);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.alist li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:12px;margin-top:1px}
+.alink{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.alink:hover{gap:10px}
+
+/* PROVIDER BOX */
+.pbox{background:linear-gradient(135deg,rgba(201,168,76,0.06),transparent);border:1px solid var(--brd);border-radius:var(--r);padding:40px 32px;margin-top:48px;display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:640px){.pbox{grid-template-columns:1fr 1fr;gap:0;align-items:center}}
+.pbl h3{font-family:var(--h);font-size:clamp(24px,4vw,32px);color:var(--w);margin-bottom:12px;font-weight:400;line-height:1.1}
+.pbl p{font-size:14px;color:var(--w2);line-height:1.7}
+.pbr{display:flex;flex-direction:column;gap:14px}
+@media(min-width:640px){.pbr{padding-left:40px;border-left:1px solid var(--brd2)}}
+.popt{display:flex;align-items:center;gap:14px;padding:16px;background:var(--bg2);border:1px solid var(--brd2);border-radius:var(--r);transition:border-color .2s}
+.popt:hover{border-color:var(--brd)}
+.pav{width:44px;height:44px;border-radius:50%;background:var(--gdim);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.pin strong{display:block;font-size:14px;font-weight:500;color:var(--w);margin-bottom:3px}
+.pin span{font-size:12px;color:var(--m);letter-spacing:0.04em}
+
+/* SERVICES */
+.svgrid{display:grid;grid-template-columns:1fr;gap:2px;margin-top:48px}
+@media(min-width:560px){.svgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.svgrid{grid-template-columns:1fr 1fr 1fr}}
+.svc{background:var(--bg2);padding:32px 26px;border:1px solid var(--brd2);transition:all .3s;position:relative;overflow:hidden}
+.svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s}
+.svc:hover{background:var(--bg3);border-color:var(--brd)}
+.svc:hover::after{opacity:1}
+.sicon{font-size:24px;margin-bottom:16px;display:block}
+.sbadge{display:inline-block;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);border:1px solid var(--brd);padding:3px 8px;border-radius:100px;margin-bottom:12px}
+.svc h3{font-family:var(--h);font-size:22px;color:var(--w);margin-bottom:10px;font-weight:400}
+.svc p{font-size:13px;line-height:1.75;color:var(--w2);margin-bottom:18px}
+.svc-consult{font-size:11px;color:var(--m);margin-bottom:14px;letter-spacing:0.04em}
+.slink{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:opacity .2s}
+.slink:hover{opacity:.7}
+
+/* ABOUT */
+.abgrid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:768px){.abgrid{grid-template-columns:5fr 7fr}}
+.pw{position:relative}
+.pimg{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:var(--r);display:block}
+.pph{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--bg3),var(--bg2));border-radius:var(--r);border:1px solid var(--brd2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.pcorn{position:absolute;bottom:-12px;right:-12px;width:50%;height:40%;border:1px solid var(--brd);border-radius:var(--r);z-index:-1}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+.cred{font-size:11px;letter-spacing:0.07em;background:var(--bg3);border:1px solid var(--brd2);padding:6px 12px;border-radius:100px;color:var(--w2)}
+.cred.g{border-color:var(--brd);color:var(--gold)}
+.abody p{font-size:15px;line-height:1.75;color:var(--w2);margin-bottom:18px}
+.abody em{color:var(--w);font-style:italic}
+.astats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:28px}
+.ast{background:var(--bg3);border:1px solid var(--brd2);padding:18px 14px;text-align:center;border-radius:var(--r)}
+.ast .n{font-family:var(--h);font-size:32px;color:var(--gold);line-height:1;margin-bottom:4px}
+.ast .l{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--m);line-height:1.4}
+
+/* WHY */
+.dgrid{display:grid;grid-template-columns:1fr;gap:2px;margin-top:48px}
+@media(min-width:560px){.dgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.dgrid{grid-template-columns:1fr 1fr 1fr 1fr}}
+.dc{background:var(--bg3);border:1px solid var(--brd2);padding:28px 22px;transition:border-color .3s}
+.dc:hover{border-color:var(--brd)}
+.dn{font-family:var(--h);font-size:44px;color:rgba(201,168,76,0.12);line-height:1;margin-bottom:12px;font-weight:600}
+.dc h3{font-family:var(--h);font-size:19px;color:var(--w);margin-bottom:10px;font-weight:400}
+.dc p{font-size:13px;line-height:1.7;color:var(--w2)}
+
+/* REVIEWS */
+.rrow{display:flex;align-items:center;gap:16px;margin-bottom:40px;flex-wrap:wrap}
+.rbig{font-family:var(--h);font-size:56px;font-weight:500;color:var(--w);line-height:1}
+.rdet{display:flex;flex-direction:column;gap:4px}
+.rstars{color:var(--gold);font-size:18px;letter-spacing:2px}
+.rlbl{font-size:12px;color:var(--m);letter-spacing:0.06em}
+.rgrid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:560px){.rgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.rgrid{grid-template-columns:1fr 1fr 1fr}}
+.rc{background:var(--bg);border:1px solid var(--brd2);padding:28px;display:flex;flex-direction:column;border-radius:var(--r)}
+.rq{font-family:var(--h);font-size:15px;line-height:1.75;color:var(--w2);font-style:italic;flex:1;margin-bottom:20px;position:relative;padding-top:8px}
+.rq::before{content:'\201C';position:absolute;top:-8px;left:0;font-size:32px;color:var(--gold);opacity:.4;line-height:1}
+.rft{display:flex;align-items:center;gap:12px}
+.rav{width:38px;height:38px;border-radius:50%;background:var(--gdim);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;font-family:var(--h);font-size:13px;color:var(--gold);flex-shrink:0;font-weight:500}
+.rname{font-size:13px;font-weight:500;color:var(--w);margin-bottom:2px}
+.rsvc{font-size:11px;color:var(--m);letter-spacing:0.04em}
+.rstars2{color:var(--gold);font-size:11px;letter-spacing:1px;margin-top:4px}
+
+/* JOURNEY */
+.jwrap{display:grid;grid-template-columns:1fr;margin-top:48px;border:1px solid var(--brd2)}
+@media(min-width:768px){.jwrap{grid-template-columns:1fr 1fr 1fr}}
+.jstep{padding:36px 28px;border-bottom:1px solid var(--brd2)}
+@media(min-width:768px){.jstep{border-bottom:none;border-right:1px solid var(--brd2)}}
+.jstep:last-child{border:none}
+.jnum{font-family:var(--h);font-size:72px;font-weight:600;color:rgba(201,168,76,0.08);line-height:1;margin-bottom:12px}
+.jtitle{font-family:var(--h);font-size:26px;color:var(--w);margin-bottom:12px;font-weight:400}
+.jdesc{font-size:13px;line-height:1.75;color:var(--w2)}
+.jlink{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-top:20px;transition:gap .2s}
+.jlink:hover{gap:10px}
+
+/* INSTAGRAM */
+.igsec{background:var(--bg2);padding:80px 20px}
+.iginner{max-width:1200px;margin:0 auto}
+.ighdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+.ighandle{display:inline-flex;align-items:center;gap:10px;margin-top:12px;text-decoration:none;padding:10px 18px;border:1px solid var(--brd);border-radius:100px;transition:all .2s;background:rgba(201,168,76,0.04)}
+.ighandle:hover{border-color:var(--gold);background:rgba(201,168,76,0.08)}
+.ighandle-text{font-size:13px;font-weight:500;color:var(--gold);letter-spacing:0.04em}
+.ighandle-sub{font-size:11px;color:var(--m)}
+.igcta{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;padding:10px 18px;border:1px solid var(--brd);border-radius:100px;transition:all .2s}
+.igcta:hover{background:var(--gdim)}
+.iggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+@media(min-width:560px){.iggrid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){.iggrid{grid-template-columns:repeat(6,1fr)}}
+.igpost{aspect-ratio:1;background:var(--bg3);border:1px solid var(--brd2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;position:relative;overflow:hidden;transition:all .3s;cursor:pointer;text-decoration:none}
+.igpost:hover{border-color:var(--brd)}
+.igpost:hover .igovr{opacity:1}
+.igovr{position:absolute;inset:0;background:rgba(201,168,76,0.08);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.igovr span{font-size:20px}
+.igph-icon{font-size:28px;opacity:.25}
+.igph-text{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--m)}
+.ignote{margin-top:20px;text-align:center;font-size:12px;color:var(--m);line-height:1.6}
+.ignote a{color:var(--gold);text-decoration:none}
+
+/* CONTACT */
+.ctaint{text-align:center;margin-bottom:48px}
+.dual{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.dual{grid-template-columns:1fr 1fr}}
+.booking-card{background:linear-gradient(135deg,rgba(201,168,76,0.07),rgba(201,168,76,0.02));border:1px solid var(--brd);border-radius:var(--r);padding:36px 32px;display:flex;flex-direction:column}
+.card-badge{display:inline-flex;align-items:center;gap:7px;background:var(--gdim);border:1px solid var(--brd);border-radius:100px;padding:6px 12px;margin-bottom:16px}
+.card-badge span{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)}
+.booking-card h3,.inquiry-card h3{font-family:var(--h);font-size:clamp(24px,3vw,30px);color:var(--w);font-weight:400;margin-bottom:10px;line-height:1.1}
+.bsub{font-size:14px;color:var(--w2);line-height:1.65;margin-bottom:0}
+.bfeats{list-style:none;display:flex;flex-direction:column;gap:10px;margin:24px 0 28px}
+.bfeats li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w2)}
+.fcheck{width:20px;height:20px;border-radius:50%;background:var(--gdim);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:11px;flex-shrink:0}
+.charm-area{background:var(--bg2);border:1px solid var(--brd2);border-radius:var(--r);padding:32px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:200px}
+.charm-icon{font-size:32px;opacity:.3}
+.charm-text{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--m)}
+.charm-sub{font-size:12px;color:var(--m);max-width:240px;text-align:center;line-height:1.6}
+.charm-iframe-wrap{width:100%;border-radius:var(--r);overflow:hidden;border:1px solid var(--brd2);background:var(--bg2)}
+.charm-iframe-wrap iframe{display:block;width:100%;min-height:700px}
+@media(max-width:600px){.charm-iframe-wrap iframe{min-height:600px}}
+.inquiry-card{background:var(--bg2);border:1px solid var(--brd2);border-radius:var(--r);padding:36px 32px;display:flex;flex-direction:column}
+.fgrid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:480px){.fgrid{grid-template-columns:1fr 1fr}}
+.fg{display:flex;flex-direction:column;gap:7px}
+.fg.full{grid-column:1/-1}
+.flbl{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--m)}
+.req{color:#e05a5a;margin-left:2px}
+.fi{background:var(--bg3);border:1px solid var(--brd2);border-radius:var(--r);padding:12px 14px;color:var(--w);font-family:var(--b);font-size:14px;transition:border-color .2s;width:100%;outline:none}
+.fi:focus{border-color:var(--gold)}
+.fi.err{border-color:#e05a5a}
+.fi::placeholder{color:rgba(122,118,112,0.45)}
+.fsel{background:var(--bg3);border:1px solid var(--brd2);border-radius:var(--r);padding:12px 14px;color:var(--w);font-family:var(--b);font-size:14px;width:100%;cursor:pointer;appearance:none;outline:none;transition:border-color .2s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.fsel:focus{border-color:var(--gold)}
+.fsel option{background:var(--bg2);color:var(--w)}
+.ferr{font-size:11px;color:#e05a5a;margin-top:4px;display:none}
+.fsub{width:100%;margin-top:16px;font-size:14px;padding:16px}
+.fnote{text-align:center;font-size:11px;color:var(--m);margin-top:12px;line-height:1.6}
+.fsucc{display:none;text-align:center;padding:40px 20px;flex-direction:column;align-items:center;justify-content:center}
+.fchk{width:56px;height:56px;border-radius:50%;background:var(--gdim);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 16px}
+.fsucc h3{font-family:var(--h);font-size:28px;margin-bottom:10px;color:var(--w)}
+.fsucc p{font-size:14px;color:var(--w2);max-width:300px;margin:0 auto}
+.sbanner{display:none;padding:12px 16px;border-radius:var(--r);font-size:13px;margin-top:12px;text-align:center}
+.sbanner.error{background:rgba(224,90,90,0.1);border:1px solid rgba(224,90,90,0.3);color:#e05a5a;display:block}
+.or-div{display:flex;align-items:center;gap:16px;margin-top:28px;padding-top:28px;border-top:1px solid var(--brd2)}
+.or-line{flex:1;height:1px;background:var(--brd2)}
+.or-text{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--m);flex-shrink:0}
+.cstrip{display:grid;grid-template-columns:1fr;gap:12px;margin-top:40px}
+@media(min-width:560px){.cstrip{grid-template-columns:1fr 1fr 1fr}}
+.cstrip-item{background:var(--bg2);border:1px solid var(--brd2);border-radius:var(--r);padding:20px;text-align:center;text-decoration:none;transition:border-color .2s;display:block}
+.cstrip-item:hover{border-color:var(--brd)}
+.cstrip-icon{font-size:22px;margin-bottom:8px}
+.cstrip-lbl{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--m);margin-bottom:4px}
+.cstrip-val{font-size:14px;color:var(--gold);font-weight:500}
+
+/* LOCATION */
+.lgrid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:48px}
+@media(min-width:768px){.lgrid{grid-template-columns:1fr 1fr}}
+.lcard{background:var(--bg2);border:1px solid var(--brd2);border-radius:var(--r);padding:32px}
+.lcard h3{font-family:var(--h);font-size:22px;color:var(--w);margin-bottom:20px;font-weight:400}
+.ltext p{font-size:14px;color:var(--w2);line-height:1.65;margin:0}
+.ltext a{color:var(--gold);text-decoration:none;font-size:13px;font-weight:500;transition:opacity .2s}
+.ltext a:hover{opacity:.75}
+.drives{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.drow{padding:10px 0;border-bottom:1px solid var(--brd2);display:flex;justify-content:space-between}
+.drow:nth-last-child(-n+2){border-bottom:none}
+.dcity{font-size:13px;color:var(--w2)}
+.dtime{font-size:13px;color:var(--gold);font-weight:500}
+.tbadge{margin-top:20px;padding:16px;background:var(--gdim);border:1px solid var(--brd);border-radius:var(--r)}
+.tbadge p:first-child{font-size:13px;color:var(--gold);font-weight:500;margin-bottom:4px}
+.tbadge p:last-child{font-size:12px;color:var(--w2)}
+
+/* FAQ */
+.faqwrap{max-width:720px;margin:48px auto 0;display:flex;flex-direction:column;gap:2px}
+.faqitem{background:var(--bg2);border:1px solid var(--brd2);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
+.faqitem.open{border-color:var(--brd)}
+.faqbtn{width:100%;background:none;border:none;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;text-align:left}
+.faqbtn:hover .faqq{color:var(--gold)}
+.faqq{font-family:var(--h);font-size:18px;color:var(--w);line-height:1.3;font-weight:400;transition:color .2s}
+.faqi{color:var(--gold);font-size:22px;flex-shrink:0;transition:transform .3s;line-height:1;font-weight:300}
+.faqitem.open .faqi{transform:rotate(45deg)}
+.faqbody{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faqitem.open .faqbody{max-height:300px}
+.faqans{padding:0 24px 22px;font-size:14px;line-height:1.8;color:var(--w2);border-top:1px solid var(--brd2);padding-top:16px}
+
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--brd2);padding:64px 20px 80px}
+.ftgrid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px;margin-bottom:48px}
+@media(min-width:640px){.ftgrid{grid-template-columns:2fr 1fr 1fr}}
+.ftlogo{font-family:var(--h);font-size:22px;font-weight:600;color:var(--gold);letter-spacing:0.1em;margin-bottom:14px}
+.ftlogo span{color:var(--w);font-weight:300}
+.ftbrand p{font-size:13px;color:var(--m);max-width:260px;line-height:1.65;margin-bottom:18px}
+.ftcon a{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--m);text-decoration:none;margin-bottom:9px;transition:color .2s}
+.ftcon a:hover{color:var(--gold)}
+.ftcol h4{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600}
+.ftcol a{display:block;font-size:13px;color:var(--m);text-decoration:none;margin-bottom:9px;transition:color .2s}
+.ftcol a:hover{color:var(--w)}
+.ftbot{max-width:1200px;margin:0 auto;border-top:1px solid var(--brd2);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.ftbot p{font-size:12px;color:var(--m)}
+.ftsoc{display:flex;gap:12px}
+.ftsoc a{width:36px;height:36px;border:1px solid var(--brd2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--m);text-decoration:none;font-size:14px;transition:all .2s}
+.ftsoc a:hover{border-color:var(--brd);color:var(--gold)}
+
+/* MOBILE STICKY */
+.msticky{position:fixed;bottom:0;left:0;right:0;z-index:150;background:rgba(7,9,14,0.97);backdrop-filter:blur(20px);border-top:1px solid var(--brd);padding:14px 16px;display:none;gap:10px}
+@media(max-width:767px){.msticky{display:flex}}
+.msticky a{flex:1;text-align:center;font-size:13px;font-weight:600;padding:13px 12px;border-radius:100px;text-decoration:none;font-family:var(--b)}
+.msb{background:var(--gold);color:#07090E}
+.msc{border:1px solid rgba(244,239,230,0.18);color:var(--w)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nw">
+    <a href="#home" class="logo">BIO<span> THRIVE</span></a>
+    <ul class="nm">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">Our Team</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#instagram">Instagram</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nb">Book Free Consult</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hglow"></div><div class="hgrid"></div>
+  <div class="hi">
+    <div class="hpill"><span class="pdot"></span><span>Now Open · Oak Brook, IL · Accepting New Patients</span></div>
+    <h1>Longevity<br>medicine <em>built</em><br><em>for you.</em></h1>
+    <p class="hsub">Advanced diagnostics. Personalized protocols. A clinical team that measures everything — then builds a plan around your actual biology, your goals, and your life.</p>
+    <div class="hproof">
+      <span class="hstars">★★★★★</span>
+      <span class="hpt">4.9 · 44 verified reviews</span>
+      <span class="hdiv"></span>
+      <span class="hbadge">Male &amp; Female Providers</span>
+      <span class="hdiv"></span>
+      <span class="hbadge">Transparent Pricing · Free Consult</span>
+    </div>
+    <div class="hbtns">
+      <a href="#contact" class="bg">Book Free Consultation</a>
+      <a href="tel:+16304541588" class="bgh">☎ (630) 454-1588</a>
+    </div>
+    <div class="scrl"><div class="scrl-line"></div><span class="scrl-text">Explore</span></div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="tstrip">
+  <div class="ti">
+    <div class="titem"><span class="tck">✓</span>DEA Certified Provider</div>
+    <div class="titem"><span class="tck">✓</span>Board-Certified FNP-FPA</div>
+    <div class="titem"><span class="tck">✓</span>15+ Years Clinical Experience</div>
+    <div class="titem"><span class="tck">✓</span>Male &amp; Female Practitioners</div>
+    <div class="titem"><span class="tck">✓</span>FDA-Regulated Compounding</div>
+    <div class="titem"><span class="tck">✓</span>Telehealth Available</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="sgrid">
+    <div class="sc"><div class="sn">15+</div><div class="sl">Years Clinical Experience</div></div>
+    <div class="sc"><div class="sn">4.9★</div><div class="sl">Patient Rating</div></div>
+    <div class="sc"><div class="sn">5+</div><div class="sl">Years Longevity Medicine</div></div>
+    <div class="sc"><div class="sn">1,000s</div><div class="sl">Patients Treated</div></div>
+  </div>
+</div>
+
+<!-- FOUNDING -->
+<div class="fband">
+  <div class="fbi">
+    <blockquote>"Bio Thrive was built with a single conviction — that <em>every person deserves a clinical team that genuinely invests in their outcomes,</em> not just their appointment slot."</blockquote>
+    <p>Founded with purpose · Oak Brook, Illinois</p>
+  </div>
+</div>
+
+<!-- WHO WE SERVE -->
+<section class="sec" id="who-we-serve">
+  <div class="con">
+    <p class="ey">Who We Serve</p>
+    <h2 class="d">From young athletes<br>to <em>every stage of life.</em></h2>
+    <div class="gr"></div>
+    <p class="bl">Bio Thrive was built for everyone — men and women, 20s to 70s and beyond. Whether you're optimizing performance, navigating hormonal changes, or refusing to accept that getting older means feeling worse.</p>
+    <div class="agrid">
+      <div class="ac">
+        <div class="atag"><span class="aicon">♀</span><span class="albl">For Her</span></div>
+        <h3>Feel like yourself again — or better than ever.</h3>
+        <p>Whether navigating perimenopause, struggling with energy and weight, or simply wanting to understand your body at a deeper level — our clinical team has the diagnostics and depth to get you there.</p>
+        <ul class="alist">
+          <li>Hormone balancing — HRT, perimenopause &amp; menopause support</li>
+          <li>Medical weight loss with personalized nutrition coaching</li>
+          <li>Skin health, aesthetics &amp; rejuvenation</li>
+          <li>IV therapy, peptides &amp; anti-aging protocols</li>
+          <li>Female provider available — your choice, always</li>
+        </ul>
+        <a href="#contact" class="alink">Book a Women's Consult →</a>
+      </div>
+      <div class="ac">
+        <div class="atag"><span class="aicon">♂</span><span class="albl">For Him</span></div>
+        <h3>Get your edge back. And keep it.</h3>
+        <p>Low energy, declining performance, weight that won't move — it's not just age. It's biology that can be measured and addressed. From elite athletes to busy professionals, we build protocols around your data.</p>
+        <ul class="alist">
+          <li>Testosterone optimization &amp; TRT with ongoing monitoring</li>
+          <li>Medical weight loss &amp; body recomposition</li>
+          <li>Peptide therapy for recovery, sleep &amp; performance</li>
+          <li>IV therapy &amp; NAD⁺ for energy &amp; cellular health</li>
+          <li>Male provider available — your choice, always</li>
+        </ul>
+        <a href="#contact" class="alink">Book a Men's Consult →</a>
+      </div>
+    </div>
+    <div class="pbox">
+      <div class="pbl">
+        <h3>Choose your provider.<br><em style="color:var(--gold)">Always.</em></h3>
+        <p>The best care starts with trust and comfort. Every Bio Thrive patient selects their own provider — male or female — before their very first appointment. No awkward conversations. Just the right fit from day one.</p>
+      </div>
+      <div class="pbr">
+        <div class="popt"><div class="pav">♀</div><div class="pin"><strong>Female Practitioners</strong><span>Available for all services</span></div></div>
+        <div class="popt"><div class="pav">♂</div><div class="pin"><strong>Male Practitioners</strong><span>Available for all services</span></div></div>
+        <a href="#contact" class="bg" style="justify-content:center">Choose Your Provider →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec seca" id="services">
+  <div class="con">
+    <p class="ey">Our Services</p>
+    <h2 class="d">Everything your body<br>needs to <em>thrive.</em></h2>
+    <div class="gr"></div>
+    <p class="bl">One clinic. One integrated care team. Six specialized service areas working together under a single, personalized plan.</p>
+    <div class="svgrid">
+      <div class="svc"><span class="sicon">⚖️</span><h3>Medical Weight Loss</h3><p>GLP-1 / Tirzepatide therapy with personalized nutrition coaching. Supervised fat loss that preserves muscle — with clinical data at every step.</p><p class="svc-consult">Pricing discussed during your free consultation.</p><a href="#contact" class="slink">Learn More →</a></div>
+      <div class="svc"><span class="sicon">⚡</span><h3>Hormone Therapy</h3><p>TRT, female HRT, perimenopause and menopause support, and thyroid management — guided by advanced lab panels and continuous monitoring.</p><p class="svc-consult">Pricing discussed during your free consultation.</p><a href="#contact" class="slink">Learn More →</a></div>
+      <div class="svc"><span class="sicon">🔬</span><div class="sbadge">New</div><h3>Peptide Therapy</h3><p>Targeted protocols for recovery, fat loss, sleep optimization, and healthy aging. FDA-regulated compounding pharmacies. Full clinical supervision.</p><p class="svc-consult">Pricing discussed during your free consultation.</p><a href="#contact" class="slink">Learn More →</a></div>
+      <div class="svc"><span class="sicon">✨</span><h3>Med Spa &amp; Aesthetics</h3><p>Natural-look Botox®, dermal fillers, HydraFacial®, microneedling with PRP, and Tixel® skin resurfacing. Medical-grade results, spa-level experience.</p><p class="svc-consult">Pricing discussed during your free consultation.</p><a href="#contact" class="slink">Learn More →</a></div>
+      <div class="svc"><span class="sicon">💧</span><h3>IV Therapy Lounge</h3><p>Hydration, immune support, athletic recovery, and NAD⁺ infusions for cellular energy and anti-aging. Relax in our concierge lounge — 30 to 120 minutes.</p><p class="svc-consult">Pricing discussed during your free consultation.</p><a href="#contact" class="slink">Learn More →</a></div>
+      <div class="svc"><span class="sicon">🧬</span><div class="sbadge">New</div><h3>Regenerative Medicine</h3><p>PRP, exosome therapy, and joint regeneration protocols. Cutting-edge healing without surgery — guided by our clinical team every step of the way.</p><p class="svc-consult">Pricing discussed during your free consultation.</p><a href="#contact" class="slink">Learn More →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="con">
+    <div class="abgrid">
+      <div class="pw">
+        <img src="data:image/avif;base64,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" alt="Jessica Setlak FNP-FPA Medical Director Bio Thrive" class="pimg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="pph" style="display:none">
+          <div style="width:70px;height:70px;border-radius:50%;background:var(--gdim);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;font-family:var(--h);font-size:24px;color:var(--gold)">JS</div>
+          <p style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--m)">Jessica Setlak, FNP-FPA</p>
+        </div>
+        <div class="pcorn"></div>
+      </div>
+      <div>
+        <p class="ey">Medical Director</p>
+        <h2 class="d">Jessica Setlak,<br><em>FNP-FPA</em></h2>
+        <div class="gr"></div>
+        <div class="creds">
+          <span class="cred g">DEA Certified</span>
+          <span class="cred g">Board-Certified FNP-FPA</span>
+          <span class="cred">15+ Years Clinical Experience</span>
+          <span class="cred">Emergency &amp; Acute Care Background</span>
+          <span class="cred">5+ Years Longevity Medicine</span>
+        </div>
+        <div class="abody">
+          <p>Bio Thrive was built around a specific type of clinical leader — one with the depth, credentials, and genuine passion for this field to do it right. Jessica Setlak is that leader.</p>
+          <p>As Medical Director, Jessica brings over 15 years of clinical experience in emergency and urgent care — including leading high-acuity clinical environments — to every patient interaction. She is DEA certified and has treated thousands of patients across all ages and acuity levels, often at critical moments. That foundation of <em>diagnostic precision and rapid decision-making</em> is rare in the wellness space.</p>
+          <p>Jessica spent years practicing functional and longevity medicine before joining Bio Thrive, integrating her conventional clinical background with cutting-edge strategies in hormone optimization, metabolic health, peptide therapy, and anti-aging medicine. <em>This is not a new direction for her — it's a calling she's been building toward for years.</em></p>
+          <p>Driven by a passion for finding the <em>"why"</em> behind symptoms, not just managing them.</p>
+        </div>
+        <div class="astats">
+          <div class="ast"><div class="n">15+</div><div class="l">Years Treating Patients</div></div>
+          <div class="ast"><div class="n">5+</div><div class="l">Years Longevity Medicine</div></div>
+          <div class="ast"><div class="n">DEA</div><div class="l">Certified Provider</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec seca" id="why-us">
+  <div class="con">
+    <p class="ey">Why Bio Thrive</p>
+    <h2 class="d">Not all clinics are<br><em>created equal.</em></h2>
+    <div class="gr"></div>
+    <p class="bl">The longevity space is growing fast — and so is the number of clinics without real clinical depth. Here's what makes Bio Thrive different, and why it matters for your outcomes.</p>
+    <div class="dgrid">
+      <div class="dc"><div class="dn">01</div><h3>Built with Purpose</h3><p>Bio Thrive wasn't assembled overnight. It was built deliberately — around a clinical philosophy, a proven medical director, and a commitment to outcomes that competing clinics simply can't match.</p></div>
+      <div class="dc"><div class="dn">02</div><h3>ER-Level Clinical Depth</h3><p>Our Medical Director is DEA certified, led emergency clinical teams, and has treated thousands of patients in critical moments. That diagnostic precision comes to every Bio Thrive appointment.</p></div>
+      <div class="dc"><div class="dn">03</div><h3>Years in Longevity — Before It Was Trendy</h3><p>Jessica spent years in functional and longevity medicine before Bio Thrive opened its doors. This isn't a pivot for her — it's a clinical calling she's been building toward for years.</p></div>
+      <div class="dc"><div class="dn">04</div><h3>Your Provider. Your Choice.</h3><p>Male and female practitioners available for all services. Because trust and comfort aren't optional — they're the foundation of care that actually works.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews">
+  <div class="con">
+    <p class="ey">Patient Outcomes</p>
+    <div class="rrow">
+      <div class="rbig">4.9</div>
+      <div class="rdet"><div class="rstars">★★★★★</div><div class="rlbl">44 verified patient reviews</div></div>
+    </div>
+    <div class="rgrid">
+      <div class="rc"><p class="rq">It started with a DEXA scan — an absolute game changer. Having Jessica break down my results has encouraged me to stay locked in. The most helpful and professional staff I've encountered.</p><div class="rft"><div class="rav">CK</div><div><div class="rname">Christy K.</div><div class="rsvc">DEXA Scan &amp; Peptides</div><div class="rstars2">★★★★★</div></div></div></div>
+      <div class="rc"><p class="rq">Jessica was extremely knowledgeable — she sent articles and podcast suggestions so I could do my own research. I feel I have a genuine partnership guiding me through this stage of life.</p><div class="rft"><div class="rav">KL</div><div><div class="rname">Kristina L.</div><div class="rsvc">Hormone Therapy</div><div class="rstars2">★★★★★</div></div></div></div>
+      <div class="rc"><p class="rq">After starting HRT with BioThrive, my T-levels are back where they should be. I have energy again, sleeping better, and feel like I got my vibrant life back. This team changed everything.</p><div class="rft"><div class="rav">MR</div><div><div class="rname">Marcus R.</div><div class="rsvc">Testosterone Optimization</div><div class="rstars2">★★★★★</div></div></div></div>
+      <div class="rc"><p class="rq">I'm 52 and feel like I have my body from my 20s back. The peptide treatments have been incredible — my recovery, my physique, my confidence. I can't recommend Bio Thrive enough.</p><div class="rft"><div class="rav">JT</div><div><div class="rname">James T.</div><div class="rsvc">Peptide Therapy</div><div class="rstars2">★★★★★</div></div></div></div>
+      <div class="rc"><p class="rq">As a D1 athlete, cramping was killing my performance. The team put me on a specialized IV protocol — within weeks it was gone. I'm playing full matches without issues. Bio Thrive understands athletes.</p><div class="rft"><div class="rav">DP</div><div><div class="rname">Derek P.</div><div class="rsvc">IV Therapy &amp; Supplementation</div><div class="rstars2">★★★★★</div></div></div></div>
+      <div class="rc"><p class="rq">Jessica gave me such a clear breakdown of what everything meant. For the first time in years I have a real picture of my health — and a plan that actually makes sense for my body.</p><div class="rft"><div class="rav">RI</div><div><div class="rname">Rachel I.</div><div class="rsvc">Diagnostics &amp; Hormone Care</div><div class="rstars2">★★★★★</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="sec seca">
+  <div class="con">
+    <p class="ey">Your Journey</p>
+    <h2 class="d">Three steps to<br><em>real transformation.</em></h2>
+    <div class="jwrap">
+      <div class="jstep"><div class="jnum">01</div><div class="jtitle">Discovery Call</div><p class="jdesc">A complimentary consultation to understand your goals, health history, and whether we're the right fit. No pressure, no obligation — just an honest conversation.</p><a href="#contact" class="jlink">Book Now →</a></div>
+      <div class="jstep"><div class="jnum">02</div><div class="jtitle">Comprehensive Baseline</div><p class="jdesc">Advanced lab panels, metabolic testing, and clinical evaluation. We build a complete, data-driven picture of your health — not an estimate, not a guess.</p><a href="#services" class="jlink">See Services →</a></div>
+      <div class="jstep"><div class="jnum">03</div><div class="jtitle">Your Personalized Roadmap</div><p class="jdesc">Meet your provider, review results, and launch your customized protocol — with coaching check-ins and ongoing data reviews to track real progress.</p><a href="#contact" class="jlink">Get Started →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="igsec" id="instagram">
+  <div class="iginner">
+    <div class="ighdr">
+      <div>
+        <p class="ey">Follow Our Journey</p>
+        <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" class="ighandle">
+          <span style="font-size:18px">📷</span>
+          <div><div class="ighandle-text">@biothrivetherapy</div><div class="ighandle-sub">Bio Thrive · Oak Brook, IL</div></div>
+        </a>
+      </div>
+      <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" class="igcta">View All Posts →</a>
+    </div>
+    <div class="iggrid">
+      <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" class="igpost"><span class="igph-icon">📷</span><span class="igph-text">Instagram</span><div class="igovr"><span>↗</span></div></a>
+      <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" class="igpost"><span class="igph-icon">📷</span><span class="igph-text">Instagram</span><div class="igovr"><span>↗</span></div></a>
+      <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" class="igpost"><span class="igph-icon">📷</span><span class="igph-text">Instagram</span><div class="igovr"><span>↗</span></div></a>
+      <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" class="igpost"><span class="igph-icon">📷</span><span class="igph-text">Instagram</span><div class="igovr"><span>↗</span></div></a>
+      <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" class="igpost"><span class="igph-icon">📷</span><span class="igph-text">Instagram</span><div class="igovr"><span>↗</span></div></a>
+      <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" class="igpost"><span class="igph-icon">📷</span><span class="igph-text">Instagram</span><div class="igovr"><span>↗</span></div></a>
+    </div>
+    <p class="ignote">To display live posts, connect <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener">@biothrivetherapy</a> using Elfsight or Lightwidget — then drop the embed code here.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="con">
+    <div class="ctaint">
+      <p class="ey" style="text-align:center">Get Started</p>
+      <h2 class="d" style="text-align:center">Start your<br><em>transformation today.</em></h2>
+      <p style="color:var(--w2);font-size:16px;max-width:500px;margin:12px auto 0;text-align:center">Ready to book? Choose a time directly. Have a question first? We're here for that too.</p>
+    </div>
+    <div class="dual">
+      <div class="booking-card">
+        <div class="card-badge"><span>📅</span><span>Book Online · Instant Confirmation</span></div>
+        <h3>Schedule Your<br>Free Consultation</h3>
+        <p class="bsub">Choose your provider, pick a time that works, and get instant confirmation. No waiting, no phone tag.</p>
+        <ul class="bfeats">
+          <li><span class="fcheck">✓</span>Choose male or female provider</li>
+          <li><span class="fcheck">✓</span>See real-time availability</li>
+          <li><span class="fcheck">✓</span>Instant appointment confirmation</li>
+          <li><span class="fcheck">✓</span>HIPAA-compliant booking</li>
+        </ul>
+        <!-- CHARM BOOKING EMBED -->
+        <div class="charm-iframe-wrap">
+          <iframe 
+            width="100%" 
+            height="1000"
+            src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&digest=f4adb162f671c8d5e5381854f7432a55ffafdeed6808f4f2bac5c1e3523de7e27cdd5a21bebc3f944ddc4d2f17c6e907d95fcbc3b76e32a2" 
+            style="overflow:hidden;" 
+            frameborder="0"
+            title="Book an Appointment at Bio Thrive"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      <div class="inquiry-card">
+        <div class="card-badge" style="margin-bottom:16px"><span>✉</span><span>General Inquiry · Reply Within 1 Business Day</span></div>
+        <h3>Have a Question<br>First?</h3>
+        <p style="font-size:14px;color:var(--w2);line-height:1.65;margin-bottom:24px">Not ready to book yet — totally fine. Send us a message and a team member will reach out personally.</p>
+        <div id="inquiryForm">
+          <div class="fgrid">
+            <div class="fg"><label class="flbl" for="fname">First Name<span class="req">*</span></label><input class="fi" type="text" id="fname" name="fname" placeholder="First name" autocomplete="given-name"><span class="ferr" id="err-fname">Please enter your first name</span></div>
+            <div class="fg"><label class="flbl" for="lname">Last Name</label><input class="fi" type="text" id="lname" name="lname" placeholder="Last name" autocomplete="family-name"></div>
+            <div class="fg"><label class="flbl" for="phone">Phone<span class="req">*</span></label><input class="fi" type="tel" id="phone" name="phone" placeholder="(630) 555-0100" autocomplete="tel"><span class="ferr" id="err-phone">Please enter your phone number</span></div>
+            <div class="fg"><label class="flbl" for="email">Email<span class="req">*</span></label><input class="fi" type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email"><span class="ferr" id="err-email">Please enter a valid email</span></div>
+            <div class="fg full"><label class="flbl" for="provider">Provider Preference</label>
+              <select class="fsel" id="provider" name="provider_preference">
+                <option value="">No preference</option>
+                <option value="Female provider">Female provider</option>
+                <option value="Male provider">Male provider</option>
+              </select>
+            </div>
+            <div class="fg full"><label class="flbl" for="interest">I'm Interested In</label>
+              <select class="fsel" id="interest" name="service_interest">
+                <option value="">Select a service...</option>
+                <option>Medical Weight Loss / GLP-1</option>
+                <option>Hormone Therapy (TRT / HRT)</option>
+                <option>Peptide Therapy</option>
+                <option>IV Therapy &amp; NAD+</option>
+                <option>Med Spa &amp; Aesthetics</option>
+                <option>General Longevity / Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="fg full"><label class="flbl" for="message">Your Message</label><textarea class="fi" rows="3" id="message" name="message" placeholder="Tell us about your health goals or questions..." style="resize:vertical"></textarea></div>
+          </div>
+          <input type="hidden" name="_subject" value="New Bio Thrive Inquiry">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button class="bg fsub" id="submitBtn" onclick="submitInquiry(event)">Send My Message</button>
+          <div class="sbanner" id="statusBanner"></div>
+          <p class="fnote">🔒 Your information is private and protected. We reply within one business day.</p>
+        </div>
+        <div class="fsucc" id="formSuccess">
+          <div class="fchk">✓</div>
+          <h3>Message received.</h3>
+          <p>We'll be in touch within one business day. We look forward to connecting with you.</p>
+        </div>
+        <div class="or-div"><div class="or-line"></div><span class="or-text">or reach us directly</span><div class="or-line"></div></div>
+        <div style="margin-top:20px"><a href="tel:+16304541588" class="bgh" style="width:100%;justify-content:center">☎ (630) 454-1588</a></div>
+      </div>
+    </div>
+    <div class="cstrip">
+      <a href="tel:+16304541588" class="cstrip-item"><div class="cstrip-icon">☎</div><div class="cstrip-lbl">Call Us</div><div class="cstrip-val">(630) 454-1588</div></a>
+      <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" class="cstrip-item"><div class="cstrip-icon">📷</div><div class="cstrip-lbl">Instagram</div><div class="cstrip-val">@biothrivetherapy</div></a>
+      <a href="https://maps.google.com/?q=1415+W+22nd+St+Ste+1025+Oak+Brook+IL+60523" target="_blank" rel="noopener" class="cstrip-item"><div class="cstrip-icon">📍</div><div class="cstrip-lbl">Visit Us</div><div class="cstrip-val">Oak Brook, IL 60523</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="sec seca">
+  <div class="con">
+    <p class="ey" style="text-align:center">Find Us</p>
+    <h2 class="d" style="text-align:center">Oak Brook, IL —<br><em>Serving Chicagoland.</em></h2>
+    <div class="lgrid">
+      <div class="lcard">
+        <h3>📍 Our Clinic</h3>
+        <div class="ltext" style="margin-bottom:20px">
+          <p style="color:var(--w);font-weight:500;margin-bottom:6px">Bio Thrive</p>
+          <p>1415 W 22nd St, Suite 1025E</p>
+          <p>Oak Brook Regency Tower — East</p>
+          <p style="margin-bottom:14px">Oak Brook, IL 60523</p>
+          <a href="https://maps.google.com/?q=1415+W+22nd+St+Ste+1025+Oak+Brook+IL+60523" target="_blank" rel="noopener">Get Directions →</a>
+        </div>
+        <div style="border-top:1px solid var(--brd2);padding-top:18px;display:flex;flex-direction:column;gap:10px">
+          <a href="tel:+16304541588" style="color:var(--gold);font-size:15px;text-decoration:none;font-weight:500">☎ (630) 454-1588</a>
+          <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener" style="color:var(--m);font-size:13px;text-decoration:none">📷 @biothrivetherapy</a>
+        </div>
+      </div>
+      <div class="lcard">
+        <h3>🕐 Drive Times</h3>
+        <div class="drives">
+          <div class="drow"><span class="dcity">Hinsdale</span><span class="dtime">7 min</span></div>
+          <div class="drow"><span class="dcity">Elmhurst</span><span class="dtime">9 min</span></div>
+          <div class="drow"><span class="dcity">Glen Ellyn</span><span class="dtime">12 min</span></div>
+          <div class="drow"><span class="dcity">O'Hare</span><span class="dtime">30 min</span></div>
+          <div class="drow"><span class="dcity">Chicago Loop</span><span class="dtime">30 min</span></div>
+          <div class="drow"><span class="dcity">Lake Forest</span><span class="dtime">40 min</span></div>
+        </div>
+        <div class="tbadge">
+          <p>Telehealth Available</p>
+          <p>Can't make it in? We offer telehealth so every patient receives the same concierge-level care — wherever you are.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="con">
+    <p class="ey" style="text-align:center">FAQ</p>
+    <h2 class="d" style="text-align:center">Common <em>questions.</em></h2>
+    <div class="faqwrap">
+      <div class="faqitem"><button class="faqbtn" onclick="toggleFaq(this)"><span class="faqq">What makes Bio Thrive different from other wellness clinics?</span><span class="faqi">+</span></button><div class="faqbody"><p class="faqans">Bio Thrive was built deliberately — around a clinical philosophy and a medical director with genuine depth in this field. Our Medical Director, Jessica Setlak, brings 15+ years of emergency and acute care experience, DEA certification, and 5+ years specifically in longevity and functional medicine. Most clinics in this space are new to it. We are not.</p></div></div>
+      <div class="faqitem"><button class="faqbtn" onclick="toggleFaq(this)"><span class="faqq">Can I choose a male or female provider?</span><span class="faqi">+</span></button><div class="faqbody"><p class="faqans">Absolutely — and we encourage it. Bio Thrive has both male and female practitioners available for all services. Simply indicate your preference when you book and we'll match you accordingly. Your comfort is not optional — it's foundational to care that actually works.</p></div></div>
+      <div class="faqitem"><button class="faqbtn" onclick="toggleFaq(this)"><span class="faqq">Do you treat both men and women?</span><span class="faqi">+</span></button><div class="faqbody"><p class="faqans">Yes — Bio Thrive was purposefully built to serve everyone. From young male athletes optimizing performance, to women navigating perimenopause, to patients in their 60s and 70s who refuse to accept that aging means feeling worse. Our services, our team, and our care model are designed for all of it.</p></div></div>
+      <div class="faqitem"><button class="faqbtn" onclick="toggleFaq(this)"><span class="faqq">How is pricing determined?</span><span class="faqi">+</span></button><div class="faqbody"><p class="faqans">We believe pricing should be personal — because your protocol is personal. Every Bio Thrive plan is customized to your specific health goals, diagnostics, and clinical needs. Transparent pricing is discussed in full during your free consultation, with no surprises and no hidden fees.</p></div></div>
+      <div class="faqitem"><button class="faqbtn" onclick="toggleFaq(this)"><span class="faqq">Is hormone replacement therapy safe?</span><span class="faqi">+</span></button><div class="faqbody"><p class="faqans">When properly monitored by a board-certified, DEA-certified provider, HRT is both safe and highly effective for men and women. We customize every protocol to your individual lab work and health history, with ongoing monitoring to ensure optimal results and safety throughout your treatment.</p></div></div>
+      <div class="faqitem"><button class="faqbtn" onclick="toggleFaq(this)"><span class="faqq">Do you offer free consultations?</span><span class="faqi">+</span></button><div class="faqbody"><p class="faqans">Yes. Your first consultation is completely complimentary. We'll discuss your health goals, review your history, determine whether Bio Thrive is the right fit, and walk you through transparent pricing for any services you're interested in — with zero pressure and zero obligation.</p></div></div>
+      <div class="faqitem"><button class="faqbtn" onclick="toggleFaq(this)"><span class="faqq">Do you offer telehealth?</span><span class="faqi">+</span></button><div class="faqbody"><p class="faqans">Yes. For patients who can't make it to our Oak Brook clinic, telehealth appointments are available for consultations, follow-ups, and ongoing care. Every patient — in-clinic or remote — receives the same concierge-level attention and personalized protocols.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftgrid">
+    <div class="ftbrand">
+      <div class="ftlogo">BIO<span> THRIVE</span></div>
+      <p>Advanced longevity medicine in Oak Brook, IL. Founded with purpose. Built around a clinical team that genuinely invests in your outcomes.</p>
+      <div class="ftcon">
+        <a href="tel:+16304541588">☎ (630) 454-1588</a>
+        <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener">📷 @biothrivetherapy</a>
+        <a href="https://maps.google.com/?q=1415+W+22nd+St+Ste+1025+Oak+Brook+IL+60523" target="_blank" rel="noopener">📍 1415 W 22nd St, Oak Brook IL 60523</a>
+      </div>
+    </div>
+    <div class="ftcol">
+      <h4>Services</h4>
+      <a href="#services">Medical Weight Loss</a>
+      <a href="#services">Hormone Therapy</a>
+      <a href="#services">Peptide Therapy</a>
+      <a href="#services">IV Therapy</a>
+      <a href="#services">Med Spa</a>
+      <a href="#services">Regenerative</a>
+    </div>
+    <div class="ftcol">
+      <h4>Clinic</h4>
+      <a href="#about">Our Medical Director</a>
+      <a href="#who-we-serve">Who We Serve</a>
+      <a href="#why-us">Why Bio Thrive</a>
+      <a href="#reviews">Patient Reviews</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#contact">Book a Consult</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="ftbot">
+    <p>© 2025 Bio Thrive LLC. All rights reserved. Oak Brook, IL 60523</p>
+    <div class="ftsoc">
+      <a href="https://www.instagram.com/biothrivetherapy/" target="_blank" rel="noopener">📷</a>
+      <a href="tel:+16304541588">☎</a>
+      <a href="#contact">✉</a>
+    </div>
+  </div>
+</footer>
+
+<div class="msticky" id="mobSticky">
+  <a href="#contact" class="msb">Book Free Consult</a>
+  <a href="tel:+16304541588" class="msc">Call Now</a>
+</div>
+
+<script>
+const FORMSPREE='https://formspree.io/f/xwvjogoz';
+function validateEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}
+function clearError(id){var el=document.getElementById(id);if(el)el.classList.remove('err');var er=document.getElementById('err-'+id);if(er)er.style.display='none';}
+function showError(id,msg){var el=document.getElementById(id);if(el)el.classList.add('err');var er=document.getElementById('err-'+id);if(er){er.textContent=msg;er.style.display='block';}}
+['fname','phone','email'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('input',function(){clearError(id);});});
+async function submitInquiry(e){
+  e.preventDefault();
+  var fname=document.getElementById('fname').value.trim();
+  var lname=document.getElementById('lname').value.trim();
+  var phone=document.getElementById('phone').value.trim();
+  var email=document.getElementById('email').value.trim();
+  var provider=document.getElementById('provider').value;
+  var interest=document.getElementById('interest').value;
+  var message=document.getElementById('message').value.trim();
+  var valid=true;
+  var banner=document.getElementById('statusBanner');
+  clearError('fname');clearError('phone');clearError('email');
+  banner.className='sbanner';banner.textContent='';
+  if(!fname){showError('fname','Please enter your first name');valid=false;}
+  if(!phone){showError('phone','Please enter your phone number');valid=false;}
+  if(!email){showError('email','Please enter your email address');valid=false;}
+  else if(!validateEmail(email)){showError('email','Please enter a valid email address');valid=false;}
+  if(!valid)return;
+  var btn=document.getElementById('submitBtn');
+  btn.textContent='Sending...';btn.style.opacity='0.7';btn.disabled=true;
+  try{
+    var res=await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({fname:fname,lname:lname,phone:phone,email:email,provider_preference:provider||'No preference',service_interest:interest||'Not specified',message:message||'No message provided',_subject:'New Bio Thrive Inquiry — '+fname+' '+lname})});
+    if(res.ok){document.getElementById('inquiryForm').style.display='none';var s=document.getElementById('formSuccess');s.style.display='flex';}
+    else{var data=await res.json();btn.textContent='Send My Message';btn.style.opacity='1';btn.disabled=false;banner.className='sbanner error';banner.textContent=data.error||'Something went wrong. Please try again or call us directly.';}
+  }catch(err){btn.textContent='Send My Message';btn.style.opacity='1';btn.disabled=false;banner.className='sbanner error';banner.textContent='Connection error. Please try again or call (630) 454-1588.';}
+}
+function toggleFaq(btn){var item=btn.closest('.faqitem');var isOpen=item.classList.contains('open');document.querySelectorAll('.faqitem.open').forEach(function(i){i.classList.remove('open')});if(!isOpen)item.classList.add('open');}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var href=this.getAttribute('href');
+    if(!href||href==='#')return;
+    var id=href.slice(1);
+    var el=document.getElementById(id);
+    if(el){
+      e.preventDefault();
+      var offset=70;
+      var top=el.getBoundingClientRect().top+window.pageYOffset-offset;
+      window.scrollTo({top:top,behavior:'smooth'});
+    }
+  });
+});
+window.addEventListener('scroll',function(){document.getElementById('mobSticky').style.display=window.scrollY>400?'flex':'none';},{passive:true});
+</script>
+</body>
+</html>
