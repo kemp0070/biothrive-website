@@ -146,7 +146,7 @@ fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px
     var fd=new FormData(form);
     var picks=[].map.call(form.querySelectorAll('input[name=interests]:checked'),function(i){return i.value;});
     fd.delete('interests'); fd.append('interests',picks.join(', '));
-    fetch('https://formspree.io/f/xwvjogoz',{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+    fetch('https://formspree.io/f/xwllbdqn',{method:'POST',body:fd,headers:{'Accept':'application/json'}})
       .then(function(r){ if(!r.ok) throw 0; success(); })
       .catch(function(){ btn.disabled=false; btn.textContent='Request my call';
         fail('That didn\'t go through. Check your connection and try again, or call/text 630.454.1588.'); });
