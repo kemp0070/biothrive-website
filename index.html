@@ -302,6 +302,17 @@ h2.d em{font-style:italic;color:var(--gold)}
 .bfeats{list-style:none;display:flex;flex-direction:column;gap:10px;margin:24px 0 28px}
 .bfeats li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w2)}
 .fcheck{width:20px;height:20px;border-radius:50%;background:var(--gdim);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:11px;flex-shrink:0}
+.ptchoice{display:flex;flex-direction:column;gap:14px;margin:24px 0 8px}
+.ptbtn{display:block;text-align:left;width:100%;padding:20px 22px;border-radius:var(--r);text-decoration:none;cursor:pointer;font-family:var(--b);transition:transform .2s,box-shadow .2s,background .2s;border:1px solid var(--gold)}
+.ptbtn .pt-t{display:block;font-size:17px;font-weight:600;letter-spacing:0.02em}
+.ptbtn .pt-s{display:block;font-size:13px;margin-top:6px;line-height:1.5}
+.ptbtn.new{background:var(--gold);color:#07090E}
+.ptbtn.new .pt-s{color:rgba(7,9,14,0.75)}
+.ptbtn.ret{background:transparent;color:var(--w)}
+.ptbtn.ret .pt-s{color:var(--w2)}
+.ptbtn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.18)}
+.ret-cal{margin-top:18px}
+.ret-cal[hidden]{display:none}
 .charm-iframe-wrap{width:100%;border-radius:var(--r);overflow:hidden;border:1px solid var(--brd2);background:#fff}
 .charm-iframe-wrap iframe{display:block;width:100%;min-height:700px}
 @media(max-width:600px){.charm-iframe-wrap iframe{min-height:600px}}
@@ -793,19 +804,24 @@ footer{background:var(--bg);border-top:1px solid var(--brd2);padding:64px 20px 8
     <div class="ctaint reveal">
       <p class="ey" style="text-align:center">Get Started</p>
       <h2 class="d" style="text-align:center">Start your<br><em>transformation today.</em></h2>
-      <p style="color:var(--w2);font-size:16px;max-width:500px;margin:12px auto 0;text-align:center">Ready to book? Choose a time directly. Have a question first? We're here for that too.</p>
+      <p style="color:var(--w2);font-size:16px;max-width:500px;margin:12px auto 0;text-align:center">New or returning, booking starts here. Have a question first? We're here for that too.</p>
     </div>
     <div class="dual reveal">
       <div class="booking-card">
-        <div class="card-badge"><span>📅</span><span>Book Online · Instant Confirmation</span></div>
-        <h3>Schedule Your<br>Consultation</h3>
-        <p class="bsub">Choose your provider, pick a time that works, and get instant confirmation. No waiting, no phone tag.</p>
-        <ul class="bfeats">
-          <li><span class="fcheck">✓</span>Choose male or female provider</li>
-          <li><span class="fcheck">✓</span>See real-time availability</li>
-          <li><span class="fcheck">✓</span>Instant appointment confirmation</li>
-          <li><span class="fcheck">✓</span>HIPAA-compliant booking</li>
-        </ul>
+        <div class="card-badge"><span>📅</span><span>Book Online</span></div>
+        <h3>Book Your<br>Visit</h3>
+        <p class="bsub">Are you new to Bio Thrive or a returning patient?</p>
+        <div class="ptchoice">
+          <a class="ptbtn new" href="/start/?src=website">
+            <span class="pt-t">New Patient →</span>
+            <span class="pt-s">Tell us your goals. Our team will call you within 2 business days to get you started.</span>
+          </a>
+          <button type="button" class="ptbtn ret" id="retBtn" aria-expanded="false" aria-controls="retCal">
+            <span class="pt-t">Returning Patient →</span>
+            <span class="pt-s">Pick a time with your provider and get instant confirmation.</span>
+          </button>
+        </div>
+        <div class="ret-cal" id="retCal" hidden>
         <div class="charm-iframe-wrap">
           <iframe
             width="100%"
@@ -816,6 +832,7 @@ footer{background:var(--bg);border-top:1px solid var(--brd2);padding:64px 20px 8
             title="Book an Appointment at Bio Thrive"
             loading="lazy">
           </iframe>
+        </div>
         </div>
       </div>
       <div class="inquiry-card">
@@ -1191,6 +1208,10 @@ window.addEventListener('scroll',function(){
     },{passive:true});
   }
 })();
+</script>
+<script>
+(function(){var b=document.getElementById('retBtn'),c=document.getElementById('retCal');if(!b||!c)return;
+b.addEventListener('click',function(){var open=c.hasAttribute('hidden');if(open){c.removeAttribute('hidden');b.setAttribute('aria-expanded','true');setTimeout(function(){c.scrollIntoView({behavior:'smooth',block:'start'})},50);}else{c.setAttribute('hidden','');b.setAttribute('aria-expanded','false');}});})();
 </script>
 </body>
 </html>
